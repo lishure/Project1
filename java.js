@@ -33,7 +33,7 @@ document.querySelector("#run-search").addEventListener("click", function (event)
     // Uploads data to the Firebase database
     database.ref().push(newFood);
 
-    console.log(newFood.food)
+    console.log(newFood.foodInput)
 
     //Fetch request
     fetch(queryURL, {
@@ -94,16 +94,54 @@ document.querySelector("#run-search").addEventListener("click", function (event)
 
 });
 
-document.querySelector("#run-search").addEventListener("click", function (event) {
+document.querySelector("#video-search").addEventListener("click", function (event) {
     var food = document.querySelector("#search-term").value.trim();
  
 var youtubeURL =`https://www.googleapis.com/youtube/v3/search?part=snippet&key=AIzaSyDV4BgUh8Hgaxji7X7ZX1jSYLDnW79GuzA&q=${food}`
 console.log(youtubeURL)
 //On click function for clear button
 
+var newFood = {
+    foodInput: food,
+};
+
+// Uploads data to the Firebase database
+database.ref().push(newFood);
+
+console.log(newFood.foodInput);
+
+fetch(youtubeURL, {
+    method: "GET"
+})
+    // After the data comes back from the API
+    .then(function (response) {
+        return response.json();
+    })
+    .then(function (response) {
+        console.log(response);
+
+        // Storing an array of results in the results variable
+        var results = response.items;
+        console.log(results)
+
+        document.getElementById("video-appear-here").innerHTML = "";
+       // document.getElementById("video-appear-here").innerHTML = JSON.stringify(results);
+        //document.getElementById("video-appear-here").innerHTML = "";
+        for (let response of results) {
+            console.log(response)
+
+            var videoDiv = document.createElement("div");
+            var videoTitle = document.createElement("h3");
+                videoTitle.innerHTML = response.snippet.title
+
+               videoDiv.appendChild(videoTitle);
+               let videoContainer = document.querySelector("#video-appear-here");
+               videoContainer.appendChild(videoDiv);
+
+        };
 
 
-
+    });
 });
 
 //store value in variable
