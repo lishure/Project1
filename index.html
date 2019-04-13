@@ -10,16 +10,11 @@
   <!-- Font Awesome CSS Icons (For cool glyphicons) -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
 
-  <!-- Style to fix the issue of text extending past card length -->
-  <style>
-    .card-body a {
-      word-break: break-all;
-    }
+  <link rel="stylesheet" type="text/css" href="style.css">
+  <script src="https://www.gstatic.com/firebasejs/4.12.0/firebase.js"></script>
 
-    .articleHeadline {
-      line-height: 1.5;
-    }
-  </style>
+  <!-- Style to fix the issue of text extending past card length -->
+  
 </head>
 
 <body>
@@ -49,13 +44,14 @@
           <div class="card-body">
 
             <!-- Here we create an HTML Form for handling the inputs-->
-            <form role="form">
-
+      
               <!-- Here we create the text box for capturing the search term-->
-              <div class="form-group">
+              
+              
+              <form id="food-form">
                 <label for="search">Search Term:</label>
-                <input type="text" class="form-control" id="search-term">
-              </div>
+                <input type="text" id="search-term">
+              </form>
 
             
 
@@ -87,7 +83,8 @@
           </div>
 
           <!-- This main card will hold each of the resulting articles -->
-          <div class="card-body" id="article-section">
+          <div id="recipes-appear-here"></div>
+          
           </div>
         </div>
       </div>
@@ -111,7 +108,7 @@
   </div>
 
   <!-- Code to the JavaScript File -->
-  <script src="NYTCode.vanilla.js"></script>
+  <script src="java.js"></script>
 
 </body>
 

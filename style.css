@@ -1,0 +1,12 @@
+.card-body a {
+    word-break: break-all;
+  }
+
+  .articleHeadline {
+    line-height: 1.5;
+  }
+
+  img {
+    width: 400px;
+    height: 300px;
+  }
