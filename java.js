@@ -25,7 +25,7 @@ document.querySelector("#run-search").addEventListener("click", function (event)
 
    console.log(queryURL)
 
-    // Holds train data
+    // Holds food data
     var newFood = {
         foodInput: food,
     };
@@ -100,6 +100,8 @@ document.querySelector("#run-search").addEventListener("click", function (event)
 var youtubeURL =`https://www.googleapis.com/youtube/v3/search?part=snippet&key=AIzaSyDV4BgUh8Hgaxji7X7ZX1jSYLDnW79GuzA&q=${food}`
 console.log(youtubeURL)
 //On click function for clear button
+
+
 
 
 });
