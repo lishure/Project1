@@ -19,7 +19,7 @@ document.querySelector("#run-search").addEventListener("click", function (event)
     // var food = event.target.innerText;
     //console.log(food)
     // var queryURL = `https://www.food2fork.com/api/search?key=1bcfc7464950bb7cf1bbc4383521d0e5&q=${food}`;
-    var queryURL = `https://www.food2fork.com/api/search?key=155d84c144c0549aca44fff5ead3c499&q=${food}&page=2&count=5`
+    var queryURL = `https://www.food2fork.com/api/search?key=987d1f959c3b41f502a9e74d5a6ad40f&q=${food}&page=2&count=5`
     // var queryURL = `https://api.edamam.com/search?q${food}&7dd99718ade839730978e1d0f2adb4e1&limit=10`;
     //Something to happen here
 
