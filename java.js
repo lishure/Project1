@@ -1,16 +1,17 @@
 
 
-  // Initialize Firebase
-  var config = {
+// Initialize Firebase
+var config = {
     apiKey: "AIzaSyB2ZKwkNlHy3C06TaV22Gve40x8WpqZP9g",
     authDomain: "team-recipe.firebaseapp.com",
     databaseURL: "https://team-recipe.firebaseio.com",
     projectId: "team-recipe",
     storageBucket: "team-recipe.appspot.com",
     messagingSenderId: "907907278801"
-  };
-  firebase.initializeApp(config);
+};
+firebase.initializeApp(config);
 
+var database = firebase.database();
 
 //On click function for submit button
 document.querySelector("#run-search").addEventListener("click", function (event) {
@@ -21,8 +22,18 @@ document.querySelector("#run-search").addEventListener("click", function (event)
     var queryURL = `https://www.food2fork.com/api/search?key=155d84c144c0549aca44fff5ead3c499&q=${food}&page=2&count=5`
     // var queryURL = `https://api.edamam.com/search?q${food}&7dd99718ade839730978e1d0f2adb4e1&limit=10`;
     //Something to happen here
-    console.log(queryURL)
 
+   console.log(queryURL)
+
+    // Holds train data
+    var newFood = {
+        foodInput: food,
+    };
+
+    // Uploads data to the Firebase database
+    database.ref().push(newFood);
+
+    console.log(newFood.food)
 
     //Fetch request
     fetch(queryURL, {
@@ -33,21 +44,23 @@ document.querySelector("#run-search").addEventListener("click", function (event)
             return response.json();
         })
         .then(function (response) {
-      
+
             // Storing an array of results in the results variable
             var results = response.recipes;
+
+            document.getElementById("recipes-appear-here").innerHTML = "";
             //console.log(response)
 
             //Display results here            
             //document.getElementById("recipes-appear-here").innerHTML = "";
-          //  document.getElementById("recipes-appear-here").innerHTML = JSON.stringify(results);
+            //  document.getElementById("recipes-appear-here").innerHTML = JSON.stringify(results);
             ///////////////////////////////////////////////////////////////////////////////////////////
             for (let response of results) {
                 console.log(response)
 
                 // Creating a div for the gif
                 var foodDiv = document.createElement("div");
-                
+
                 var foodTitle = document.createElement("h3");
                 foodTitle.innerHTML = response.title
 
@@ -68,12 +81,12 @@ document.querySelector("#run-search").addEventListener("click", function (event)
                 // Appending the paragraph and personImage we created to the "gifDiv" div we created
                 foodDiv.appendChild(foodTitle);
                 foodDiv.appendChild(foodImage);
-                
+
 
                 // Prepending the gifDiv to the "#gifs-appear-here" div in the HTML
                 let foodContainer = document.querySelector("#recipes-appear-here");
-                 foodContainer.appendChild(foodDiv);
-                 foodContainer.appendChild(foodURL);
+                foodContainer.appendChild(foodDiv);
+                foodContainer.appendChild(foodURL);
 
             }
 
@@ -81,15 +94,15 @@ document.querySelector("#run-search").addEventListener("click", function (event)
 
 });
 
+document.querySelector("#run-search").addEventListener("click", function (event) {
+    var food = document.querySelector("#search-term").value.trim();
+ 
+var youtubeURL =`https://www.googleapis.com/youtube/v3/search?part=snippet&key=AIzaSyDV4BgUh8Hgaxji7X7ZX1jSYLDnW79GuzA&q=${food}`
+console.log(youtubeURL)
 //On click function for clear button
 
-document.querySelector("#clear-all").addEventListener("click", function (event) {
 
-
-
-    //something to happen here
 });
-
 
 //store value in variable
 
