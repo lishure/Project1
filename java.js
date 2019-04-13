@@ -1,14 +1,16 @@
 
-// Initialize Firebase
-var config = {
-    apiKey: "AIzaSyA2riSvMmVBlocP_AHaLuDyA7RdTeUNVQw",
-    authDomain: "project1-1d03b.firebaseapp.com",
-    databaseURL: "https://project1-1d03b.firebaseio.com",
-    projectId: "project1-1d03b",
-    storageBucket: "project1-1d03b.appspot.com",
-    messagingSenderId: "937950193220"
-};
-firebase.initializeApp(config);
+
+  // Initialize Firebase
+  var config = {
+    apiKey: "AIzaSyB2ZKwkNlHy3C06TaV22Gve40x8WpqZP9g",
+    authDomain: "team-recipe.firebaseapp.com",
+    databaseURL: "https://team-recipe.firebaseio.com",
+    projectId: "team-recipe",
+    storageBucket: "team-recipe.appspot.com",
+    messagingSenderId: "907907278801"
+  };
+  firebase.initializeApp(config);
+
 
 //On click function for submit button
 document.querySelector("#run-search").addEventListener("click", function (event) {
