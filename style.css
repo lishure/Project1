@@ -1,3 +1,32 @@
+
+/* custom CSS to override some BootStrap*/
+
+body{
+  background-color: #ffffff;
+  font-family: 'Times New Roman', Times, serif;
+  font-variant: small-caps;
+  font-size: 1.5vw;
+  border-left: 6vw;
+  border-right: 6vw;
+  border-bottom: 6vw;
+  border-top: 6vw;
+  margin-left: 6%;
+  margin-right: 6%;
+
+}
+
+h1 {
+  font-family: 'Times New Roman', Times, serif;
+  font-size: 5vw;
+  font-variant: small-caps;
+}
+
+h5 {
+  font-family: 'Times New Roman', Times, serif;
+  font-style: italic;
+  font-variant: small-caps;
+}
+
 .card-body a {
     word-break: break-all;
   }
@@ -10,3 +39,5 @@
     width: 400px;
     height: 300px;
   }
+
+  
