@@ -133,8 +133,13 @@ fetch(youtubeURL, {
             var videoDiv = document.createElement("div");
             var videoTitle = document.createElement("h3");
                 videoTitle.innerHTML = response.snippet.title
+            
+            var videoThumb = document.createElement("img");
+                videoThumb.innerHTML = response.snippet.thumbnails.high
 
                videoDiv.appendChild(videoTitle);
+               videoDiv.appendChild(videoThumb);
+
                let videoContainer = document.querySelector("#video-appear-here");
                videoContainer.appendChild(videoDiv);
 
