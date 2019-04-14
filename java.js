@@ -12,11 +12,13 @@ firebase.initializeApp(config);
 var database = firebase.database();
 //On click function for submit button
 document.querySelector("#run-search").addEventListener("click", function (event) {
+    //call to functin to displays the cards
+    displayCard();
     var food = document.querySelector("#search-term").value.trim();
     // var food = event.target.innerText;
     //console.log(food)
     // var queryURL = `https://www.food2fork.com/api/search?key=1bcfc7464950bb7cf1bbc4383521d0e5&q=${food}`;
-    var queryURL = `https://www.food2fork.com/api/search?key=987d1f959c3b41f502a9e74d5a6ad40f&q=${food}&page=2&count=5`
+    var queryURL = `https://www.food2fork.com/api/search?key=53e4aa663f2c4015b6eff89482fb114f&q=${food}&page=2&count=5`
     //Something to happen here
     console.log(queryURL)
     // Holds food data
@@ -116,3 +118,10 @@ function onYouTubeIframeAPIReady() {
     });
 }
 video();
+
+//function that displays card when search button is pressed
+function displayCard() {
+    document.getElementById('artRow').style.visibility='visible';
+    document.getElementById('vidRow').style.visibility='visible';
+    console.log("display cards")
+}
