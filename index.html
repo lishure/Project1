@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8">
   <title>What's for lunch?</title>
@@ -12,17 +11,14 @@
   <link rel="stylesheet" type="text/css" href="style.css">
   <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
   <script src="https://apis.google.com/js/api.js"></script>
-
   <!-- Style to fix the issue of text extending past card length -->
   
 </head>
-
 <body> 
     
   </div>
   <!-- Main Bootstrap Search -->
   <div class="container">
-
     <!-- Jumbotron for Title -->
     <div class="jumbotron" style="background-image: url(https://i.pinimg.com/originals/43/c4/32/43c4325b0e66e21d82f02745fc91bda0.jpg); padding-bottom: 23%; color: white; "></div>
       <h1 class="text-center"> 
@@ -30,7 +26,6 @@
           <i class=""></i> What's for Lunch?</strong> 
       </h1>
     </div>
-
     <!-- Row for Searching Edamam -->
     <div class="row">
       <div class="col-sm-12">
@@ -42,7 +37,6 @@
               <i class=""></i> Search For Recipes</strong>
           </div>
           <div class="card-body">
-
             <!-- Here we create an HTML Form for handling the inputs-->
       
               <!-- Here we create the text box for capturing the search term-->
@@ -52,37 +46,28 @@
                 <label for="search">Search Term:</label>
                 <input type="text" id="search-term">
               </form>
-
             
-
               <!-- Here we have our final submit button -->
               <button type="submit" class="btn btn-default" id="run-search">
                 <i class=""></i> Search Recipes</button>
-                <button type="submit" class="btn btn-default" id="video-search">
-                  <i class=""></i> Search Videos</button>
+                
               
-
             </form>
           </div>
         </div>
       </div>
     </div>
-
     <!-- This row will handle all of the retrieved articles -->
     <div class="row">
       <div class="col-sm-12">
         <br>
-
         <!-- This card will initially be made up of a card and wells for each of the articles retrieved -->
         <div class="card">
-
           <!-- card Heading for the retrieved articles box -->
           <div class="card-header">
             <strong>
               <i class=""></i> Top Recipes</strong>
-
           </div>
-
           <!-- This main card will hold each of the resulting articles -->
           <div id="recipes-appear-here"></div>
           
@@ -99,7 +84,7 @@
             <!-- card Heading for the retrieved articles box -->
             <div class="card-header">
               <strong>
-                <i class=""></i> Top Video</strong>
+                <i class=""></i> Top Tasty Video</strong>
             </div>
   
             <!-- This main card will hold each of the resulting articles -->
@@ -109,23 +94,15 @@
           </div>
         </div>
     </div>
-
     <!-- Footer Region -->
     <div class="row">
       <div class="col-sm-12">
-
-
         <hr>
        
-
       </div>
     </div>
-
   </div>
-
   <!-- Code to the JavaScript File -->
   <script src="java.js"></script>
-
 </body>
-
 </html>
