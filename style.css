@@ -12,13 +12,14 @@ body{
   border-top: 6vw;
   margin-left: 6%;
   margin-right: 6%;
-
 }
 
 h1 {
   font-family: 'Times New Roman', Times, serif;
   font-size: 5vw;
   font-variant: small-caps;
+  text-align: center;
+
 }
 
 h5 {
