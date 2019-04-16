@@ -11,6 +11,8 @@
   <link rel="stylesheet" type="text/css" href="style.css">
   <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
   <script src="https://apis.google.com/js/api.js"></script>
+  <!-- animate.css CDN -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
   <!-- Style to fix the issue of text extending past card length -->
   
 </head>
@@ -21,13 +23,14 @@
   <div class="container">
     <!-- Jumbotron for Title -->
     <div class="jumbotron" style="background-image: url(https://i.pinimg.com/originals/43/c4/32/43c4325b0e66e21d82f02745fc91bda0.jpg); padding-bottom: 23%; color: white; "></div>
-      <h1 class="text-center"> 
+    <!-- added a simple bounce animation that happens when the page loads  -->
+      <h1 class="animated bounceInDown"> 
         <strong>
           <i class=""></i> What's for Lunch?</strong> 
       </h1>
     </div>
-    <!-- Row for Searching Edamam -->
-    <div class="row">
+    <!-- Row for Searching food2fork -->
+    <div class="row animated bounceInDown">
       <div class="col-sm-12">
         <br>
         <!-- First card is for handling the search parameters -->
@@ -75,7 +78,7 @@
         </div>
       </div>
       <!-- This row will display the youtube video -->
-      <div class="row" id="vidRow" style="visibility: collapse">
+      <div class="row" id="vidRow" style="visibility: hidden">
         <div class="col-sm-12">
           <br>
   
