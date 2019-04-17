@@ -1,6 +1,4 @@
-
 /* custom CSS to override some BootStrap*/
-
 body{
   background-color: #ffffff;
   font-family: 'Times New Roman', Times, serif;
@@ -12,68 +10,50 @@ body{
   border-top: 6vw;
   margin-left: 6%;
   margin-right: 6%;
+  background-image: url(images/food-background.png);
 }
-
 h1 {
   font-family: 'Times New Roman', Times, serif;
   font-size: 5vw;
   font-variant: small-caps;
   text-align: center;
-
 }
-
 h5 {
   font-family: 'Times New Roman', Times, serif;
   font-style: italic;
   font-variant: small-caps;
 }
-
 .card-body a {
     word-break: break-all;
   }
-
   .articleHeadline {
     line-height: 1.5;
   }
-
   img {
     width: 400px;
     height: 300px;
   }
-
-<<<<<<< HEAD
   .artRow 
   {
     text-align: justify;
   }
-
   .receipes-appear-here
   {
     text-align: center;
   }
-
   .card-header
   {
     text-align: center;
   }
-
   .card
   {
     text-align: center;
   }
-
   .video-appear-here
   {
     
   }
  
-
-
-  
-=======
-  #food-form{
-    font-size: 17px;
+  #video-appear-here {
+    margin: 10px 10px 10px 220px;
   }
-
->>>>>>> 07c7ba72a5d0bf87d28ae52ed793a92e3b8a2d6d
-  
