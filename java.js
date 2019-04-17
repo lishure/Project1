@@ -14,7 +14,7 @@ document.querySelector("#run-search").addEventListener("click", function (event)
     //call to function to displays the cards
     displayCard();
     var food = document.querySelector("#search-term").value.trim();
-    var queryURL = `https://www.food2fork.com/api/search?key=53e4aa663f2c4015b6eff89482fb114f&q=${food}&page=2&count=5`
+    var queryURL = `https://www.food2fork.com/api/search?key=155d84c144c0549aca44fff5ead3c499&q=${food}&page=2&count=5`
     //Something to happen here
     console.log(queryURL)
     // Holds food data
@@ -53,6 +53,8 @@ document.querySelector("#run-search").addEventListener("click", function (event)
                 foodURL.target = "_blank"
                 console.log(foodURL);
                 var foodButton = document.createElement("button");
+                //added bootstrap class to buttons inside of the recipe dive
+                foodButton.setAttribute("class", "btn btn-default")
                 foodButton.innerHTML = "Get Recipe"
                 foodURL.appendChild(foodButton);
                 // Appending the paragraph and personImage we created to the "gifDiv" div we created
