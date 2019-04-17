@@ -12,7 +12,7 @@ firebase.initializeApp(config);
 var database = firebase.database();
 //On click function for submit button
 document.querySelector("#run-search").addEventListener("click", function (event) {
-    //call to functin to displays the cards
+    //call to function to displays the cards
     displayCard();
     var food = document.querySelector("#search-term").value.trim();
     // var food = event.target.innerText;
