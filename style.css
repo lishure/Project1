@@ -12,13 +12,14 @@ body{
   border-top: 6vw;
   margin-left: 6%;
   margin-right: 6%;
-
 }
 
 h1 {
   font-family: 'Times New Roman', Times, serif;
   font-size: 5vw;
   font-variant: small-caps;
+  text-align: center;
+
 }
 
 h5 {
@@ -40,6 +41,7 @@ h5 {
     height: 300px;
   }
 
+<<<<<<< HEAD
   .artRow 
   {
     text-align: justify;
@@ -68,4 +70,10 @@ h5 {
 
 
   
+=======
+  #food-form{
+    font-size: 17px;
+  }
+
+>>>>>>> 07c7ba72a5d0bf87d28ae52ed793a92e3b8a2d6d
   
