@@ -19,6 +19,9 @@ h1 {
   font-size: 5vw;
   font-variant: small-caps;
   text-align: center;
+  background-color: white;
+  width: 800px;
+  backgrou
 
 }
 
@@ -41,7 +44,6 @@ h5 {
     height: 300px;
   }
 
-<<<<<<< HEAD
   .artRow 
   {
     text-align: justify;
@@ -62,18 +64,10 @@ h5 {
     text-align: center;
   }
 
-  .video-appear-here
-  {
-    
-  }
  
-
+.jumbotron {
+  background-image: url(images/pizzabackground.jpg)
+}
 
   
-=======
-  #food-form{
-    font-size: 17px;
-  }
-
->>>>>>> 07c7ba72a5d0bf87d28ae52ed793a92e3b8a2d6d
   
