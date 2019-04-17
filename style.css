@@ -19,14 +19,13 @@ h1 {
   text-align: center;
 
   background-color: white;
-  width: 800px;
-  backgrou
+  
 
 
 }
 h5 {
   font-family: 'Times New Roman', Times, serif;
-  font-style: italic;
+
   font-variant: small-caps;
 }
 .card-body a {
@@ -69,7 +68,7 @@ h5 {
     margin: 10px 10px 10px 220px;
   }
 
-  #run-search {
+  #run-search, button {
     background-color: crimson;
     color: white;
   }
