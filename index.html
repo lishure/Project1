@@ -3,14 +3,13 @@
 <head>
   <meta charset="UTF-8">
   <title>What's for lunch?</title>
-  <!-- Bootstrap CSS CDN  -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
   <link rel="icon" href="https://image.flaticon.com/icons/png/512/45/45332.png"/>
-  <!-- Font Awesome CSS Icons (For cool glyphicons) -->
+    <!-- Bootstrap CSS CDN  -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
   <link rel="stylesheet" type="text/css" href="style.css">
+  <!--firebase-->
   <script src="https://www.gstatic.com/firebasejs/5.9.4/firebase.js"></script>
-  <script src="https://apis.google.com/js/api.js"></script>
   <!-- animate.css CDN -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
 </head>
@@ -20,10 +19,7 @@
     <!-- Jumbotron for Title -->
     <div class="jumbotron">
     <!-- added a simple bounce animation that happens when the page loads  -->
-      <h1 class=""> 
-        <strong>
-          <i class=""></i> What's For Lunch?</strong> 
-      </h1>
+      <h1>What's For Lunch?</h1>
     </div>
     <!-- Row for Searching food2fork + animation for the row -->
     <div class="row animated bounceInUp">
@@ -32,17 +28,16 @@
         <!-- First card is for handling the search parameters -->
         <div class="card">
           <div class="card-header">
-            <strong>
-              <i class=""></i> Search For Recipes</strong>
+              <h3>Search For Recipes</h3>
           </div>
           <div class="card-body">      
               <!-- Here we create the text box for capturing the search term-->  
               <form id="food-form">
-                <label for="search">Search Term:</label>
+                <label for="search"><h5>Search Term:</h5></label>
                 <input type="text" id="search-term">
               <!-- Here we have our final submit button -->
               <button type="submit" class="btn btn-default" id="run-search">
-              <i class=""></i> Search Recipes</button>
+              <h5>Search Recipes</h5></button>
               </form>     
           </div>
         </div>
@@ -56,8 +51,7 @@
         <div class="card">
           <!-- card Heading for the retrieved articles box -->
           <div class="card-header">
-            <strong>
-              <i class=""></i> Top Recipes</strong>
+              <h4>Top Recipes</h4>
           </div>
           <!-- This main card will hold each of the resulting articles -->
           <div id="recipes-appear-here"></div>
@@ -72,8 +66,7 @@
           <div class="card">
             <!-- card Heading for the retrieved articles box -->
             <div class="card-header">
-              <strong>
-                <i class=""></i> Top Tasty Video</strong>
+                <h4>Top Tasty Video</h4>
             </div>
             <!-- This main card will hold each of the resulting videos -->
             <div id="video-appear-here"></div>
@@ -84,7 +77,9 @@
     <!-- Footer Region -->
     <div class="row">
       <div class="col-sm-12">
-        <footer></footer>
+        <footer>
+          <h5 class = text-center>Made with Hunger
+            <i class="fa fa-heart"></i></h5></footer>
       </div>
     </div>
   </div>
