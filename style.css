@@ -41,8 +41,39 @@ h5 {
     height: 300px;
   }
 
+<<<<<<< HEAD
+  .artRow 
+  {
+    text-align: justify;
+  }
+
+  .receipes-appear-here
+  {
+    text-align: center;
+  }
+
+  .card-header
+  {
+    text-align: center;
+  }
+
+  .card
+  {
+    text-align: center;
+  }
+
+  .video-appear-here
+  {
+    
+  }
+ 
+
+
+  
+=======
   #food-form{
     font-size: 17px;
   }
 
+>>>>>>> 07c7ba72a5d0bf87d28ae52ed793a92e3b8a2d6d
   
