@@ -19,8 +19,6 @@ h1 {
   text-align: center;
 
   background-color: white;
-  
-
 
 }
 h5 {
@@ -65,11 +63,43 @@ h5 {
 
 
   #video-appear-here {
-    margin: 10px 10px 10px 220px;
+    margin: 10px 10px 10px 240px;
   }
 
   #run-search, button {
     background-color: crimson;
     color: white;
   }
+
+/*responsive*/
+
+@media screen and (max-width:980px) {
+  #video-appear-here {
+    width: 400px;
+    margin: 10px 10px 10px 150px;
+  }
+
+}
+
+
+@media screen and (max-width:768px) {
+ #video-appear-here {
+   width: 400px;
+   margin: 10px 10px 10px 60px;
+  }
+ }
+ 
+
+
+  
+@media screen and (max-width:640px) {
+  #video-appear-here {
+    width: 400px;
+    margin: 10px 10px 10px 50px;
+   }
+
+  }
+
+ 
+
 
