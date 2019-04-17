@@ -17,6 +17,12 @@ h1 {
   font-size: 5vw;
   font-variant: small-caps;
   text-align: center;
+
+  background-color: white;
+  width: 800px;
+  backgrou
+
+
 }
 h5 {
   font-family: 'Times New Roman', Times, serif;
@@ -33,6 +39,8 @@ h5 {
     width: 400px;
     height: 300px;
   }
+
+
   .artRow 
   {
     text-align: justify;
@@ -49,7 +57,14 @@ h5 {
   {
     text-align: center;
   }
+
+
  
+.jumbotron {
+  background-image: url(images/pizzabackground.jpg)
+}
+
+
   #video-appear-here {
     margin: 10px 10px 10px 220px;
   }
@@ -58,3 +73,4 @@ h5 {
     background-color: crimson;
     color: white;
   }
+
