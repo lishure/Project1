@@ -49,11 +49,12 @@ h5 {
   {
     text-align: center;
   }
-  .video-appear-here
-  {
-    
-  }
  
   #video-appear-here {
     margin: 10px 10px 10px 220px;
+  }
+
+  #run-search {
+    background-color: crimson;
+    color: white;
   }
