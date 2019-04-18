@@ -17,8 +17,11 @@ h1 {
   font-size: 5vw;
   font-variant: small-caps;
   text-align: center;
+  font-weight: bolder;
 
-  background-color: white;
+
+  color: #fff;
+ 
 
 }
 h5 {
@@ -58,7 +61,7 @@ h5 {
 
  
 .jumbotron {
-  background-image: url(images/pizzabackground.jpg)
+  background-image: url(images/food-jumbotron.png)
 }
 
 

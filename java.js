@@ -13,6 +13,8 @@ var database = firebase.database();
 document.querySelector("#run-search").addEventListener("click", function (event) {
     //call to function to displays the cards
     displayCard();
+    //call to function to animate the bottom cards
+    animateCard();
     var food = document.querySelector("#search-term").value.trim();
     var queryURL = `https://www.food2fork.com/api/search?key=155d84c144c0549aca44fff5ead3c499&q=${food}&page=2&count=5`
     //Something to happen here
@@ -117,9 +119,18 @@ function onYouTubeIframeAPIReady() {
 }
 video();
 
+var art = document.getElementById('artRow');
+var vid = document.getElementById('vidRow');
+
 //function that displays card when search button is pressed
 function displayCard() {
-    document.getElementById('artRow').style.visibility='visible';
-    document.getElementById('vidRow').style.visibility='visible';
+    art.style.visibility='visible';
+    vid.style.visibility='visible';
     console.log("display cards")
+}
+//function that adds a little animation when the search button is pressed
+function animateCard() {
+    art.setAttribute("class", "animated bounceInUp");
+    vid.setAttribute("class", "animated bounceInUp");
+    console.log("animateCard");
 }
