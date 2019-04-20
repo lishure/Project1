@@ -33,28 +33,20 @@
         <div class="card text-white bg-dark mb-3">
           <div class="card-header">
               <h3>Search For Recipes</h3>
-          </div>
-          <div class="card-body">      
+          <!-- </div>
+          <div class="card-body">       -->
               <!-- Here we create the text box for capturing the search term-->  
               <form id="food-form">
-                <label for="search"><h5>Search Term:</h5></label>
-                <input type="text" id="search-term">
-              <!-- Here we have our final submit button -->
+                <label for="search-term"><h4>Search Term:</h4></label>
+                <input type="text" id="search-term" placeholder="Enter Food" required>
+                <div class="invalid-feedback">
+                    Enter Food Item
+                  </div>
+                <!-- Here we have our final submit button -->
               <button type="submit" class="btn btn-default" id="run-search">
               <h5>Search Recipes</h5></button>
-              </form>   
-              <!-- <form class="needs-validation" novalidate>
-                  <div class="form-row">
-                    <div class="col-md-4 mb-3">
-                      <label for="validationCustom01">First name</label>
-                      <input type="text" class="form-control" id="validationCustom01" placeholder="Enter Search Term Here" value="" required>
-                      <div class="invalid-feedback">
-                        Enter Search Term
-                      </div>
-                    </div>  
-                  </div>
-                  <button class="btn btn-primary" type="submit">Submit form</button>
-                  </form> -->
+              </form>  
+
           </div>
         </div>
       </div>
@@ -95,10 +87,10 @@
       <div class="col-sm-12">
 
         <hr>
-        <h5 class="text-center">
-          <small>Made with lots of
+        <h4 class="text-center">
+          <medium>Made with lots of
             <i class="fas fa-pizza-slice"></i>
-          </small>
+          </medium>
         </h5>
 
       </div>
