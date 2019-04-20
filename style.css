@@ -58,6 +58,10 @@ h5 {
     text-align: center;
   }
 
+h4 {
+  font-weight: bold;
+}
+
 
  
 .jumbotron {
@@ -73,6 +77,10 @@ h5 {
     background-color: crimson;
     color: white;
   }
+
+ /* .invalid-input {
+   background-color: red;
+ } */
 
 /*responsive*/
 
@@ -103,6 +111,7 @@ h5 {
 
   }
 
- 
+
+  
 
 

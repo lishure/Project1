@@ -11,12 +11,88 @@ firebase.initializeApp(config);
 var database = firebase.database();
 //On click function for submit button
 document.querySelector("#run-search").addEventListener("click", function (event) {
+    event.preventDefault();
+    var food = document.querySelector("#search-term").value.trim();
+    var youtubeURL = `https://www.googleapis.com/youtube/v3/search?part=snippet&key=AIzaSyBQhatp5CZwxyjhKCS8uz7gEouQdhovPNc&q=${food}+tasty`
+    console.log(youtubeURL)
+    //On click function for clear button
+    var newFood = {
+        foodInput: food,
+    };
+    // Uploads data to the Firebase database
+    database.ref().push(newFood);
+    console.log(newFood.foodInput);
+    fetch(youtubeURL, {
+        method: "GET"
+    })
+        // After the data comes back from the API
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (response) {
+            console.log(response);
+            document.addEventListener(
+                'DOMContentLoaded', () => setTimeout(initializeFreshchatWidget, 100)
+            )
+            var youtubeVideos = response.items[0].id.videoId
+            ytplayer.loadVideoById({ videoId: youtubeVideos })
+            // Storing an array of results in the results variable
+            var results = response.items;
+            console.log(results)
+            document.getElementById("video-appear-here").innerHTML = "";
+        });
+});
+//create iframe for youtube
+function video() {
+    console.log("video function call")
+    var tag = document.createElement('script');
+    tag.id = 'iframe-demo';
+    tag.src = 'https://www.youtube.com/iframe_api';
+    var firstScriptTag = document.getElementsByTagName('script')[0];
+    firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+}
+//run youtube function.
+var ytplayer;
+function onYouTubeIframeAPIReady() {
+    console.log("onYouTubeIframeAPIReady")
+    ytplayer = new YT.Player("video-appear-here", {
+    });
+}
+video();
+
+var art = document.getElementById('artRow');
+var vid = document.getElementById('vidRow');
+
+//function that displays card when search button is pressed
+function displayCard() {
+    art.style.visibility = 'visible';
+    vid.style.visibility = 'visible';
+    console.log("display cards")
+}
+//function that adds a little animation when the search button is pressed
+function animateCard() {
+    art.setAttribute("class", "animated bounceInUp");
+    vid.setAttribute("class", "animated bounceInUp");
+    console.log("animateCard");
+}
+
+
+document.querySelector("#run-search").addEventListener("click", function (event) {
+
+    var food = document.querySelector("#search-term").value.trim();
+    document.querySelector("#search-term").value = ""
+    if (food === "") {
+        document.querySelector("#search-term").classList.add("invalid-input")
+        document.querySelector("#search-term").setAttribute("placeholder", "Please Enter Food Item Here")
+        return
+    }
+    
     //call to function to displays the cards
     displayCard();
     //call to function to animate the bottom cards
     animateCard();
-    var food = document.querySelector("#search-term").value.trim();
-    var queryURL = `https://www.food2fork.com/api/search?key=155d84c144c0549aca44fff5ead3c499&q=${food}&page=2&count=5`
+
+    var queryURL = `https://www.food2fork.com/api/search?key=ace7b03a95d1dcbd5b7b4c7694815952&q=${food}&page=2&count=5`
     //Something to happen here
     console.log(queryURL)
     // Holds food data
@@ -37,36 +113,46 @@ document.querySelector("#run-search").addEventListener("click", function (event)
         .then(function (response) {
             // Storing an array of results in the results variable
             var results = response.recipes;
-            document.getElementById("recipes-appear-here").innerHTML = "";
-            database.ref().push(results);
-            //console.log(response)
-            //Display results here            
-            //  document.getElementById("recipes-appear-here").innerHTML = JSON.stringify(results);
-            for (let response of results) {
-                console.log(response)
-                // Creating a div for the gif
-                var foodDiv = document.createElement("div");
-                var foodTitle = document.createElement("h3");
-                foodTitle.innerHTML = response.title
-                // Creating an image tag
-                var foodImage = document.createElement("img");
-                foodImage.src = response.image_url
-                var foodURL = document.createElement("a");
-                foodURL.href = response.f2f_url
-                foodURL.target = "_blank"
-                console.log(foodURL);
-                var foodButton = document.createElement("button");
-                //added bootstrap class to buttons inside of the recipe dive
-                foodButton.setAttribute("class", "btn btn-default")
-                foodButton.innerHTML = "Get Recipe"
-                foodURL.appendChild(foodButton);
-                // Appending the paragraph and personImage we created to the "gifDiv" div we created
-                foodDiv.appendChild(foodTitle);
-                foodDiv.appendChild(foodImage);
-                // Prepending the gifDiv to the "#gifs-appear-here" div in the HTML
-                let foodContainer = document.querySelector("#recipes-appear-here");
-                foodContainer.appendChild(foodDiv);
-                foodContainer.appendChild(foodURL);
+            console.log("results", results.length)
+            if (results.length === 0) {
+                document.querySelector("#recipes-appear-here").innerHTML = ""
+                document.querySelector("#search-term").setAttribute("placeholder", "No Recipes Exist")
+                return
+            }
+
+            else {
+                document.querySelector("#search-term").setAttribute("placeholder", "Enter Food")
+                document.getElementById("recipes-appear-here").innerHTML = "";
+                database.ref().push(results);
+                //console.log(response)
+                //Display results here            
+                //  document.getElementById("recipes-appear-here").innerHTML = JSON.stringify(results);
+                for (let response of results) {
+                    console.log(response)
+                    // Creating a div for the gif
+                    var foodDiv = document.createElement("div");
+                    var foodTitle = document.createElement("h3");
+                    foodTitle.innerHTML = response.title
+                    // Creating an image tag
+                    var foodImage = document.createElement("img");
+                    foodImage.src = response.image_url
+                    var foodURL = document.createElement("a");
+                    foodURL.href = response.f2f_url
+                    foodURL.target = "_blank"
+                    console.log(foodURL);
+                    var foodButton = document.createElement("button");
+                    //added bootstrap class to buttons inside of the recipe dive
+                    foodButton.setAttribute("class", "btn btn-default")
+                    foodButton.innerHTML = "Get Recipe"
+                    foodURL.appendChild(foodButton);
+                    // Appending the paragraph and personImage we created to the "gifDiv" div we created
+                    foodDiv.appendChild(foodTitle);
+                    foodDiv.appendChild(foodImage);
+                    // Prepending the gifDiv to the "#gifs-appear-here" div in the HTML
+                    let foodContainer = document.querySelector("#recipes-appear-here");
+                    foodContainer.appendChild(foodDiv);
+                    foodContainer.appendChild(foodURL);
+                }
             }
         });
 });
@@ -125,8 +211,8 @@ var vid = document.getElementById('vidRow');
 
 //function that displays card when search button is pressed
 function displayCard() {
-    art.style.visibility='visible';
-    vid.style.visibility='visible';
+    art.style.visibility = 'visible';
+    vid.style.visibility = 'visible';
     console.log("display cards")
 }
 //function that adds a little animation when the search button is pressed
@@ -135,21 +221,3 @@ function animateCard() {
     vid.setAttribute("class", "animated bounceInUp");
     console.log("animateCard");
 }
-//user input validation
-// (function() {
-//     'use strict';
-//     window.addEventListener('load', function() {
-//       // Fetch all the forms we want to apply custom Bootstrap validation styles to
-//       var forms = document.getElementsByClassName('needs-validation');
-//       // Loop over them and prevent submission
-//       var validation = Array.prototype.filter.call(forms, function(form) {
-//         form.addEventListener('submit', function(event) {
-//           if (form.checkValidity() === false) {
-//             event.preventDefault();
-//             event.stopPropagation();
-//           }
-//           form.classList.add('was-validated');
-//         }, false);
-//       });
-//     }, false);
-//   })();
