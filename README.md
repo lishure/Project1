@@ -6,7 +6,7 @@ Project Title: What’s for Lunch?
 
 Team Members: Lisa, Roberto, Sasan
 
-Project description: Input name of food in search bar to pull up recipes related to the type of food as well as pulling up a youtube video for cooking instructions.
+Project description: Input name of food in search bar to pull up recipes related to the type of food as well as pulling up a youtube Tasty video.
 
 APIs to be used: Food2Fork API & Youtube API
 Rough Breakdown of tasks: 

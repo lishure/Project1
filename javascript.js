@@ -15,7 +15,6 @@ document.querySelector("#run-search").addEventListener("click", function (event)
     var food = document.querySelector("#search-term").value.trim();
     var youtubeURL = `https://www.googleapis.com/youtube/v3/search?part=snippet&key=AIzaSyBQhatp5CZwxyjhKCS8uz7gEouQdhovPNc&q=${food}+tasty`
     console.log(youtubeURL)
-    //On click function for clear button
     var newFood = {
         foodInput: food,
     };
@@ -76,24 +75,22 @@ function animateCard() {
     console.log("animateCard");
 }
 
-
+//same on click function but for food2fork API
 document.querySelector("#run-search").addEventListener("click", function (event) {
 
     var food = document.querySelector("#search-term").value.trim();
     document.querySelector("#search-term").value = ""
     if (food === "") {
-        document.querySelector("#search-term").classList.add("invalid-input")
         document.querySelector("#search-term").setAttribute("placeholder", "Please Enter Food Item Here")
         return
     }
-    
+
     //call to function to displays the cards
     displayCard();
     //call to function to animate the bottom cards
     animateCard();
 
     var queryURL = `https://www.food2fork.com/api/search?key=ace7b03a95d1dcbd5b7b4c7694815952&q=${food}&page=2&count=5`
-    //Something to happen here
     console.log(queryURL)
     // Holds food data
     var newFood = {

@@ -18,15 +18,10 @@ h1 {
   font-variant: small-caps;
   text-align: center;
   font-weight: bolder;
-
-
   color: #fff;
- 
-
 }
 h5 {
   font-family: 'Times New Roman', Times, serif;
-
   font-variant: small-caps;
 }
 .card-body a {
@@ -39,7 +34,6 @@ h5 {
     width: 400px;
     height: 300px;
   }
-
 
   .artRow 
   {
@@ -77,10 +71,6 @@ h4 {
     background-color: crimson;
     color: white;
   }
-
- /* .invalid-input {
-   background-color: red;
- } */
 
 /*responsive*/
 

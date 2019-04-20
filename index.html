@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <title>What's for lunch?</title>
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
-  <link rel="icon" href="https://image.flaticon.com/icons/png/512/45/45332.png"/>
-    <!-- Bootstrap CSS CDN  -->
+  <link rel="icon" href="https://image.flaticon.com/icons/png/512/45/45332.png" />
+  <!-- Bootstrap CSS CDN  -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css" />
   <link rel="stylesheet" type="text/css" href="style.css">
   <!--firebase-->
@@ -13,16 +14,17 @@
   <!-- animate.css CDN -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
   <!-- fontawesome CDN -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
-
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+    integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
 
 </head>
-<body> 
+
+<body>
   <!-- Main Bootstrap Search + animtation for the whole container-->
   <div class="container">
     <!-- Jumbotron for Title -->
     <div class="jumbotron animated bounceInUp bg-dark mb-3">
-    <!-- added a simple bounce animation that happens when the page loads  -->
+      <!-- added a simple bounce animation that happens when the page loads  -->
       <h1>What's For Lunch?</h1>
     </div>
     <!-- Row for Searching food2fork -->
@@ -32,21 +34,21 @@
         <!-- First card is for handling the search parameters -->
         <div class="card text-white bg-dark mb-3">
           <div class="card-header">
-              <h3>Search For Recipes</h3>
-          <!-- </div>
-          <div class="card-body">       -->
-              <!-- Here we create the text box for capturing the search term-->  
-              <form id="food-form">
-                <label for="search-term"><h4>Search Term:</h4></label>
-                <input type="text" id="search-term" placeholder="Enter Food" required>
-                <div class="invalid-feedback">
-                    Enter Food Item
-                  </div>
-                <!-- Here we have our final submit button -->
+            <h3>Search For Recipes</h3>
+            <!-- Here we create the text box for capturing the search term-->
+            <form id="food-form">
+              <label for="search-term">
+                <h4>Search Term:</h4>
+              </label>
+              <input type="text" id="search-term" placeholder="Enter Food" required>
+              <div class="invalid-feedback">
+                Enter Food Item
+              </div>
+              <!-- Here we have our final submit button -->
               <button type="submit" class="btn btn-default" id="run-search">
-              <h5>Search Recipes</h5></button>
-              </form>  
-
+                <h5>Search Recipes</h5>
+              </button>
+            </form>
           </div>
         </div>
       </div>
@@ -59,44 +61,43 @@
         <div class="card text-white bg-dark mb-3">
           <!-- card Heading for the retrieved articles box -->
           <div class="card-header">
-              <h4>Top Recipes</h4>
+            <h4>Top Recipes</h4>
           </div>
           <!-- This main card will hold each of the resulting articles -->
           <div id="recipes-appear-here"></div>
-          </div>
         </div>
       </div>
-      <!-- This row will display the youtube video -->
-      <div class="row" id="vidRow" style="visibility: hidden">
-        <div class="col-sm-12">
-          <br>
-          <!-- This card will initially be made up of a card and wells for each of the articles retrieved -->
-          <div class="card text-white bg-dark mb-3">
-            <!-- card Heading for the retrieved video box -->
-            <div class="card-header">
-                <h4>Top Tasty Video</h4>
-            </div>
-            <!-- This main card will hold each of the resulting videos -->
-            <div id="video-appear-here"></div>
-            </div>
-          </div>
-        </div>
     </div>
-    <!-- Footer Region -->
-    <div class="row animated bounceInUp">
+    <!-- This row will display the youtube video -->
+    <div class="row" id="vidRow" style="visibility: hidden">
       <div class="col-sm-12">
-
-        <hr>
-        <h4 class="text-center">
-          <medium>Made with lots of
-            <i class="fas fa-pizza-slice"></i>
-          </medium>
-        </h5>
-
+        <br>
+        <!-- This card will initially be made up of a card and wells for each of the articles retrieved -->
+        <div class="card text-white bg-dark mb-3">
+          <!-- card Heading for the retrieved video box -->
+          <div class="card-header">
+            <h4>Top Tasty Video</h4>
+          </div>
+          <!-- This main card will hold each of the resulting videos -->
+          <div id="video-appear-here"></div>
+        </div>
       </div>
     </div>
+  </div>
+  <!-- Footer Region -->
+  <div class="row animated bounceInUp">
+    <div class="col-sm-12">
+      <hr>
+      <h4 class="text-center">
+        <medium>Made with lots of
+          <i class="fas fa-pizza-slice"></i>
+        </medium>
+        </h5>
+    </div>
+  </div>
   </div>
   <!-- Code to the JavaScript File -->
   <script src="javascript.js"></script>
 </body>
+
 </html>
