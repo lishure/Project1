@@ -14,3 +14,4 @@ Sasan: Responsible for Front-End, Layout, CSS
 Roberto: Responsible for Back-End
 Lisa: Hybrid Role to oversee both Front-End and Back-End and help with both 
 
+Link to slides: https://docs.google.com/presentation/d/1oEwLeLvm-GTewDDgJv2DkuMc1NjkfijzqWmiKzVwNys/edit?usp=sharing
