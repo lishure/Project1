@@ -16,7 +16,7 @@ document.querySelector("#run-search").addEventListener("click", function (event)
     //call to function to animate the bottom cards
     animateCard();
     var food = document.querySelector("#search-term").value.trim();
-    var queryURL = `https://www.food2fork.com/api/search?key=1bcfc7464950bb7cf1bbc4383521d0e5&q=${food}&page=2&count=5`
+    var queryURL = `https://www.food2fork.com/api/search?key=155d84c144c0549aca44fff5ead3c499&q=${food}&page=2&count=5`
     //Something to happen here
     console.log(queryURL)
     // Holds food data
@@ -38,6 +38,7 @@ document.querySelector("#run-search").addEventListener("click", function (event)
             // Storing an array of results in the results variable
             var results = response.recipes;
             document.getElementById("recipes-appear-here").innerHTML = "";
+            database.ref().push(results);
             //console.log(response)
             //Display results here            
             //  document.getElementById("recipes-appear-here").innerHTML = JSON.stringify(results);
@@ -134,3 +135,21 @@ function animateCard() {
     vid.setAttribute("class", "animated bounceInUp");
     console.log("animateCard");
 }
+//user input validation
+// (function() {
+//     'use strict';
+//     window.addEventListener('load', function() {
+//       // Fetch all the forms we want to apply custom Bootstrap validation styles to
+//       var forms = document.getElementsByClassName('needs-validation');
+//       // Loop over them and prevent submission
+//       var validation = Array.prototype.filter.call(forms, function(form) {
+//         form.addEventListener('submit', function(event) {
+//           if (form.checkValidity() === false) {
+//             event.preventDefault();
+//             event.stopPropagation();
+//           }
+//           form.classList.add('was-validated');
+//         }, false);
+//       });
+//     }, false);
+//   })();
