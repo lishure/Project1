@@ -10,7 +10,7 @@ body{
   border-top: 6vw;
   margin-left: 6%;
   margin-right: 6%;
-  background-image: url(images/food.background.jpg);
+  background: URL(Images/food.background.jpg);
 }
 h1 {
   font-family: 'Times New Roman', Times, serif;
@@ -61,7 +61,7 @@ h5 {
 
  
 .jumbotron {
-  background-image: url(images/food-jumbotron.png)
+  background: URL(Images/food-jumbotron.png);
 }
 
 
